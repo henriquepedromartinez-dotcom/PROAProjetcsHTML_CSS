@@ -1,0 +1,104 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(92, 75, 241);
+    background-attachment: fixed; /* serve para que a imagem de fundo fique fixa enquanto o usuário rola a página */
+}
+
+form{
+    background-color: rgb(157, 173, 192);
+    padding: 50px 0;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 20px 40px rgb(0, 0, 0); /* serve para criar uma sombra ao redor do formulário, dando um efeito de profundidade e destaque. O primeiro valor (0px) representa o deslocamento horizontal da sombra, o segundo valor (30px) representa o deslocamento vertical da sombra, o terceiro valor (40px) representa o desfoque da sombra e o quarto valor (rgba(0, 0, 0, 0.1)) representa a cor da sombra com uma opacidade de 0.1. */
+    width: 500px;
+    margin: 8% auto;
+}
+
+.input-box{
+    position: relative;
+    width: 80%;
+    margin: 30px auto;
+    box-shadow: 0px 4px 10px -10px rgb(0, 0, 0);
+}
+
+.input-box input{
+    width: 80%;
+    height: 40%;
+    padding: 10px;
+    border: none;
+    padding-left: 40px;
+    background-color: #efefef;
+    border-radius: 10px;
+}
+
+span img{
+    position: absolute;
+    border-radius: 7px;
+    top: 50%;
+    left: 18px;
+    height: 25px;
+    width: 25px;
+    padding: 2px;
+    transform: translateY(-50%);
+    background: linear-gradient(90deg, rgba(92, 75, 241, 1) 0%, rgba(157, 173, 192, 1) 100%);
+}
+
+.password{
+    height: 23.5px;
+    width: 23px;
+    padding: 3px;
+}
+
+h1{
+    color: rgb(92, 75, 241);
+    font-size: 30px;
+    margin-bottom: 20px;
+}       
+
+button{
+    width: 40%;
+    height: 40px;
+    border: none;
+    background-image: linear-gradient(90deg, rgba(92, 75, 241, 1) 0%, rgb(0, 115, 255),rgba(92, 75, 241, 1) 100%   );
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+ #user{
+    
+    width: 80px;
+    height: 80px;
+    padding: 8px;
+    margin-bottom: 20px;
+    border-radius: 100px;
+    position: absolute;
+    top: 9%;
+    left: 47%;
+    background: linear-gradient(to top, rgba(92, 75, 241, 1) 0%, rgba(157, 173, 192, 1) 100%);
+
+}
+
+/* Botão voltar */
+.back-btn {
+position: fixed;
+top: 20px;
+left: 20px;
+background: #38bdf8;
+color: #0f172a;
+padding: 10px 16px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: 600;
+transition: all 0.3s ease;
+box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+}
+
+/* Hover */
+.back-btn:hover {
+background: #0ea5e9;
+transform: translateY(-2px);
+box-shadow: 0 8px 20px rgba(56, 189, 248, 0.5);
+}
+

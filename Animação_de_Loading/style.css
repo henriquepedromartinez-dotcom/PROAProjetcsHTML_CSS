@@ -1,0 +1,45 @@
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(160, 157, 157);
+}
+
+.loader{
+    height: 200px;
+    width: 200px;
+    border: 12px solid;
+    border-radius: 50%;
+    border-right-color: #4070f4;
+    animation: spin 1s ease infinite;
+    color: #fff;
+}
+
+@keyframes spin {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* Botão voltar */
+.back-btn {
+position: fixed;
+top: 20px;
+left: 20px;
+background: #38bdf8;
+color: #0f172a;
+padding: 10px 16px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: 600;
+transition: all 0.3s ease;
+box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+}
+
+/* Hover */
+.back-btn:hover {
+background: #0ea5e9;
+transform: translateY(-2px);
+box-shadow: 0 8px 20px rgba(56, 189, 248, 0.5);
+}

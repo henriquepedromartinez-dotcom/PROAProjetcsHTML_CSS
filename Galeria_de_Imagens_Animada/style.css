@@ -1,0 +1,74 @@
+h1{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.galeria {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    margin: 5% auto 0;
+    box-sizing: border-box; /* serve para incluir o padding e a borda no cálculo do tamanho total do elemento, garantindo que o layout seja consistente e previsível. */
+}
+
+.image-box {
+    margin: 0 1%;
+    flex-grow: 1;
+    flex-basis: 0;
+    transition: 0.3s ease;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* serve para ajustar a imagem dentro do contêiner, mantendo a proporção original da imagem. Se a imagem for maior que o contêiner, ela será redimensionada para caber dentro do contêiner, sem distorcer a imagem. */
+    border-radius: 5px;
+}
+
+.image-box:hover {
+    flex-grow: 3; /* serve para aumentar a imagem quando o mouse passar sobre ela. O valor de flex-grow é definido como 3 para que a imagem aumente em relação às outras imagens na galeria, e o valor de flex-basis é definido como 0 para que a imagem ocupe todo o espaço disponível, sem distorcer a imagem. */ 
+    flex-basis: 0; /* serve para garantir que a imagem aumente proporcionalmente ao espaço disponível, sem distorcer a imagem. O valor de flex-basis é definido como 0 para que a imagem ocupe todo o espaço disponível, e o valor de flex-grow é definido como 3 para que a imagem aumente em relação às outras imagens na galeria. */
+    transition: 0.3s ease;
+}
+
+.active {
+    flex-grow: 3;
+    flex-basis: 0;
+    transition: 0.3s ease;
+}
+
+/* .galeria:hover .active {
+    flex-grow: 1;
+    flex-basis: 0;
+    transition: 0.3s ease; 
+    serve para reduzir a imagem ativa quando o mouse passar sobre a galeria, para que as outras imagens possam ser visualizadas. O valor de flex-grow é definido como 1 para que a imagem ativa seja reduzida em relação às outras imagens na galeria, e o valor de flex-basis é definido como 0 para que a imagem ocupe todo o espaço disponível, sem distorcer a imagem.
+} */
+
+/* .image-box:nth-child(1):hover {
+    flex-basis: 50%;
+} */
+
+/* Botão voltar */
+.back-btn {
+position: fixed;
+top: 20px;
+left: 20px;
+background: #38bdf8;
+color: #0f172a;
+padding: 10px 16px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: 600;
+transition: all 0.3s ease;
+box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+}
+
+/* Hover */
+.back-btn:hover {
+background: #0ea5e9;
+transform: translateY(-2px);
+box-shadow: 0 8px 20px rgba(56, 189, 248, 0.5);
+}
+

@@ -1,0 +1,161 @@
+/* estilização global */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* estilização do container principal */
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('img/back-image.png');
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 2s ease-in-out;
+    padding: 10px 10%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* estilização do container de navegação */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+/* estilização do logo */
+.logo{
+    width: 140px;
+}
+
+/* estilização da lista de navegação */
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 10px 15px;
+}
+
+/* estilização dos links de navegação */
+nav ul li a{
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+/* estilização do botão de login */
+.login-btn{
+    text-decoration: none;
+    color: #6e04b1;
+    margin-right: 15px;
+    font-weight: 400;
+    padding: 8px 30px;
+    background-color: #00000000;
+    border: 2px solid #6e04b1;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.5s ease;
+    
+}
+
+/* estilização do botão de login ao passar o mouse */
+.login-btn:hover{
+    background-image: linear-gradient(45deg, #9d00ff, #531c69);
+    color: #fff;
+}
+
+/* estilização do botão de cadastro */
+.cadastro-btn{
+    text-decoration: none;
+    color: #fff;
+    padding: 14px 40px;
+    display: inline-block;
+    background-image: linear-gradient(45deg, #9d00ff, #531c69);
+    font-size: 14px;
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    transition: 0.5s ease;
+
+}
+
+/* estilização do botão de cadastro ao passar o mouse */
+.cadastro-btn:hover{
+    border-top-right-radius: 30px;
+}
+
+/* estilização do conteúdo principal */ 
+.content{
+    max-width: 600px;
+    margin-top: 10%;
+}
+
+
+/* estilização do título principal */ 
+.content h1{
+    font-size: 48px;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+/* estilização do parágrafo principal */
+.content p{
+    font-size: 18px;
+    color: #000;
+    margin: 10px 0 30px;
+}
+
+/* estilização do botão de cadastro dentro do conteúdo principal */
+.content .cadastro-btn{
+    padding: 15px 80px;
+    font-size: 16px;
+}
+
+/* estilização da imagem principal */ 
+.feature-img{
+    width: 490px;
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+}       
+
+/* estilização da animação de fade-in */
+.anim{
+    opacity: 0;
+    animation: moveUp 0.5s linear forwards;
+    transform: translateY(30px);
+}
+
+/* animação de movimento para cima
+serve para criar um efeito de fade-in e movimento para cima nos elementos com a classe "anim" */
+@keyframes moveUp {
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botão voltar */
+.back-btn {
+position: fixed;
+top: 20px;
+left: 20px;
+background: #38bdf8;
+color: #0f172a;
+padding: 10px 16px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: 600;
+transition: all 0.3s ease;
+box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+}
+
+/* Hover */
+.back-btn:hover {
+background: #0ea5e9;
+transform: translateY(-2px);
+box-shadow: 0 8px 20px rgba(56, 189, 248, 0.5);
+}

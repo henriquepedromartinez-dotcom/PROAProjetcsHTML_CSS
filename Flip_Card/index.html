@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- Informa ao navegador que este arquivo usa HTML5 -->
+<html lang="pt-BR">
+<head>
+    <!-- Define os caracteres para o navegador entender acentos e simbolos -->
+    <meta charset="UTF-8">
+    <!-- Faz o site se adaptar melhor ao tamanho da tela do celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Nome que aparece na aba do navegador -->
+    <title>Flip Card</title>
+    <!-- Conecta este HTML com o arquivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Area principal da pagina -->
+    <section>
+        <!-- Caixa que segura o cartao e permite o efeito de virar -->
+        <div class="container">
+            <!-- Frente do cartao -->
+            <div class="card front-face">
+                <!-- Parte de cima do cartao -->
+                <header>
+                    <!-- Logo e nome da bandeira/cartao -->
+                    <span class="logo">
+                        <img src="img/logo.png" alt="">
+                        <h5>Marter Card</h5>
+                    </span>
+                    <!-- Imagem do chip do cartao -->
+                    <img src="img/chip.png" alt="" class="chip">
+                </header>
+
+                <!-- Parte com numero, nome e validade -->
+                <div class="card-details">
+                    <!-- Bloco com numero do cartao e nome da pessoa -->
+                    <div class="name-number">
+                        <h6>Número do Cartão</h6>
+                        <h5 class="number">8080 9876 9097 9870</h5>
+                        <h5 class="name">Pedro Henrique Martinez</h5>
+                    </div>
+
+                    <!-- Bloco com a data de validade -->
+                    <div class="valid-date">
+                        <h6>Data de <br>Validade</h6>
+                        <h5>03/29</h5>
+                    </div>
+                </div>
+            </div>
+            <!-- Verso do cartao -->
+            <div class="card back-face">
+                <h6>Serviço ao usuário ligar +55 11 98616 6215 ou email para mastercard@gmail.com</h6>
+                <!-- Faixa preta magnetica que existe no verso de cartoes -->
+                <span class="magnetic-strip"></span>
+                <!-- Campo da assinatura com o codigo de seguranca -->
+                <div class="signature"><i>055</i></div>
+                <!-- Texto explicativo no rodape do verso -->
+                <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur consequuntur quo earum officiis commodi asperiores explicabo necessitatibus maxime quasi error!</h5>
+            </div>
+        </div>
+    </section>
+    <a href="javascript:history.back()" class="back-btn">← Voltar</a>
+</body>
+</html>

@@ -1,0 +1,251 @@
+/* Importa a fonte "Poppins" do Google para deixar o texto mais bonito */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/* Configuração geral para todos os elementos da página */
+* {
+  /* Remove os espaços padrão que o navegador coloca */
+  margin: 0;
+  padding: 0;
+  /* Faz largura e altura ficarem mais fáceis de controlar */
+  box-sizing: border-box;
+  /* Define a fonte principal do projeto */
+  font-family: "Poppins", sans-serif;
+}
+
+/* Área principal que ocupa a tela inteira */
+section{
+    /* Faz a seção ter pelo menos a altura total da tela */
+    min-height: 100vh;
+    /* Permite posicionar elementos por cima dela */
+    position: relative;
+    /* Faz a seção ocupar toda a largura */
+    width: 100%;
+    /* Cor de fundo escura */
+    background: #121321;
+    /* Ativa o Flexbox para centralizar o cartão */
+    display: flex;
+    /* Centraliza na vertical */
+    align-items: center;
+    /* Centraliza na horizontal */
+    justify-content: center;
+    /* Define a cor do texto */
+    color:#ffff;
+    /* Cria sensação de profundidade para o efeito 3D */
+    perspective: 3000;
+}
+
+/* Círculo decorativo que aparece atrás do cartão */
+section::before{
+    /* Cria um elemento visual vazio */
+    content: "";
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    /* Deixa o elemento redondo */
+    border-radius: 50%;
+    /* Move o círculo para a posição desejada */
+    transform: translate(-150px,-100px);
+    /* Aplica um degradê */
+    background: linear-gradient(90deg, white,purple);
+}
+
+/* Segundo círculo decorativo */
+section::after{
+    content: "";
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    transform: translate(150px,100px);
+    background: linear-gradient(90deg, purple,white);
+}
+
+/* Caixa que segura o cartão inteiro */
+.container{
+    position: relative;
+    /* Altura do cartão */
+    height: 225px;
+    /* Largura do cartão */
+    width: 375px;
+    /* Garante que o cartão fique acima dos círculos */
+    z-index: 100;
+    /* Suaviza a animação ao passar o mouse */
+    transition: 0.7s;
+    /* Mantém o efeito 3D dos lados do cartão */
+    transform-style: preserve-3d;
+}
+
+/* Quando o mouse passa em cima, o cartão gira */
+.container:hover{
+    transform: rotateY(180deg);
+}
+
+/* Estilo base das duas faces do cartão */
+.container .card{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* Espaço interno entre a borda e o conteúdo */
+    padding: 25px;
+    /* Fundo transparente para efeito de vidro */
+    background: rgba(255, 255, 255, 0.1);
+    /* Desfoque do que estiver atrás */
+    backdrop-filter: blur(25px);
+    /* Arredonda os cantos */
+    border-radius: 25px;
+    /* Sombra para destacar o cartão */
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+    /* Borda suave */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Esconde o lado de trás quando ele não deve aparecer */
+    backface-visibility: hidden;
+}
+
+/* Organiza os itens do topo da frente do cartão */
+.front-face header, 
+.front-face .logo{
+    display: flex;
+    align-items: center;
+}
+
+/* Separa os elementos do cabeçalho */
+.front-face header{
+    justify-content: space-between;
+}
+
+/* Tamanho do ícone da logo */
+.front-face .logo img{
+    width: 48px;
+    margin-right: 12px;
+}
+
+/* Estilo geral dos títulos h5 */
+h5{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Tamanho da imagem do chip */
+.front-face .chip{
+    width: 50px;
+}
+
+
+
+/* Parte de baixo da frente do cartão */
+.front-face .card-details{
+    display: flex;
+    /* Distância do topo para respirar melhor */
+    margin-top: 40px;
+    /* Alinha os itens pela parte de baixo */
+    align-items: flex-end;
+    /* Joga um bloco para cada lado */
+    justify-content: space-between;
+}
+
+/* Estilo geral dos textos menores */
+h6{
+    font-size: 10px;
+    font-weight: 400;
+}
+
+/* Número do cartão com destaque */
+h5.number{
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+/* Espaço acima do nome da pessoa */
+h5.name{
+    margin-top: 20px;
+}
+
+
+/* Área da validade do cartão */
+.front-face .valid-date{
+    justify-items: center;
+    
+}
+
+/* Parte de trás do cartão */
+.card.back-face{
+    /* Remove a borda porque o verso usa outro visual */
+    border: none;
+    /* Ajusta os espaços internos */
+    padding: 15px 25px 25px 25px;
+    /* Deixa o verso já girado para aparecer quando o container virar */
+    transform: rotateY(180deg);
+}
+
+/* Texto pequeno do verso */
+.card.back-face h6{
+    font-size: 8px;
+}
+
+/* Faixa preta magnética do cartão */
+.card.back-face .magnetic-strip{
+    position: absolute;
+    top: 40px;
+    left: 0;
+    height: 45px;
+    width: 100%;
+    background: #000;
+}
+
+/* Área da assinatura */
+.card.back-face .signature{
+    display: flex;
+    /* Alinha a assinatura à direita */
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 80px;
+    height: 40px;
+    width: 85%;
+    border-radius: 6px;
+    /* Cor base branca */
+    background-color: #fff;
+    /* Linhas para parecer o campo de assinatura */
+    background: repeating-linear-gradient(
+    #fff, 
+    #fff 3px,
+    #efefef 0px,
+    #efefef 9px);
+}
+
+/* Código de segurança no canto da assinatura */
+.signature i{
+    color: #000;
+    font-size: 12px;
+    padding: 4px 6px;
+    background-color: #fff;
+    margin-right: -30px;
+    z-index: -1;
+}
+
+/* Texto explicativo pequeno no verso */
+.card.back-face h5{
+    font-size: 8px;
+    margin-top: 15px;
+}
+
+/* Botão voltar */
+.back-btn {
+position: fixed;
+top: 20px;
+left: 20px;
+background: #38bdf8;
+color: #0f172a;
+padding: 10px 16px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: 600;
+transition: all 0.3s ease;
+box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+}
+
+/* Hover */
+.back-btn:hover {
+background: #0ea5e9;
+transform: translateY(-2px);
+box-shadow: 0 8px 20px rgba(56, 189, 248, 0.5);
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elemento Div Arrastável</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>Div Arrastável</header>
+        <div class="content">
+            <div class="icon"><i class="fa fa-hand-o-up"></i></div>
+        
+            <div class="tittle">Div Arrastável</div>
+            <p>Isso é um elemento div arastável, você pode segurar e arrastar para onde quiser</p>
+        </div>
+    </div>
+
+    <script>
+        const wrapper = document.querySelector(".wrapper");
+        header = wrapper.querySelector("header");
+
+        function onDrag({movementX, movementY}) {
+            let getStyle = window.getComputedStyle(wrapper);
+            let left = parseInt(getStyle.left);
+            let top = parseInt(getStyle.top);
+            wrapper.style.left = `${left + movementX}px`;
+            wrapper.style.top = `${top + movementY}px`;
+        };
+
+        header.addEventListener("mousedown", ()=>{
+            header.addEventListener("mousemove", onDrag);
+        });
+        document.addEventListener("mouseup", ()=>{
+            header.removeEventListener("mousemove", onDrag);
+        });
+        
+
+    </script>
+</body>
+</html>

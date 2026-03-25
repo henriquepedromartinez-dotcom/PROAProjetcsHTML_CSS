@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+
+.result_images{
+    display: flex;
+    column-gap: 7rem;
+}
+
+.container.start .user_result{
+    transform-origin: left;
+    animation: userShake 0.7s ease infinite;
+}
+@keyframes userShake{
+    50%{
+        transform: rotate(10deg);
+    }
+}
+
+.container.start .cpu_result{
+    transform-origin: right;
+    animation: cpuShake 0.7s ease infinite;
+}
+@keyframes cpuShake{
+    50%{
+        transform: rotate(-10deg);
+    }
+}
+
+.result_images img{
+    width: 100px;
+}
+
+.user_result img{
+    transform: rotate(90deg);
+}
+
+.cpu_result img{
+    transform: rotate(-90deg) rotateY(180deg);
+}
+
+.result{
+    text-align: center;
+    font-size: 2rem;
+    color: blueviolet;
+    margin-top: 1.5rem;
+}
+
+.option_image img{
+    width: 50px;
+}
+
+.option_images{
+    display: flex;
+    align-items: center;
+    margin-top: 2.5rem;
+    justify-content: space-between;
+    
+}
+
+.container.start  .option_images{
+    pointer-events: none;
+}
+
+.option_image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.option_image:hover{
+    opacity: 1;
+}
+.option_image.active{
+    opacity: 1;
+}
+
+.option_image img{
+    pointer-events: none;
+}
+
+.option_image p{
+    color: blueviolet;
+    font-size: 1.235rem;
+    margin-top: 1rem;
+    pointer-events: none;
+}
+
+/* Botão voltar */
+.back-btn {
+position: fixed;
+top: 20px;
+left: 20px;
+background: #38bdf8;
+color: #0f172a;
+padding: 10px 16px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: 600;
+transition: all 0.3s ease;
+box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+}
+
+/* Hover */
+.back-btn:hover {
+background: #0ea5e9;
+transform: translateY(-2px);
+box-shadow: 0 8px 20px rgba(56, 189, 248, 0.5);
+}
