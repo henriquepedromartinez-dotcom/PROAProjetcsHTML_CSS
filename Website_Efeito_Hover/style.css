@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+}
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    padding: 20px 10%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+nav .logo{
+    width: 150px;
+    cursor: pointer;
+}
+
+img .menu-img{
+    width: 30px;
+    cursor: pointer;
+    display: none;
+}
+nav ul{
+    flex: 1;
+    text-align: right;
+    margin-right: 150px;
+}   
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    padding: 10px;
+    font-weight: 500;
+    position: relative;
+}   
+
+nav ul li a::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0px;
+    z-index: -1;
+    background: #81c73f;
+    bottom: -5px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition: height 0.3s ease;
+}
+
+nav ul li a:hover::before{
+    height: 85px ;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col{
+    flex-basis: 50%;
+    position: relative;
+}   
+
+.feature-img{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.thumbnail-img{
+    width: 280px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    border-radius: 8px;
+    box-shadow: 5px 8px 10px rgba(0, 128, 255, 0.1);
+}
+
+.col h1{
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 180px;
+}   
+
+.col a{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 18px 50px;
+    background: #81c73f;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 30px;
+    box-shadow: 5px 8px 10px rgba(0, 128, 255, 0.1);
+
+}
+
+/* Botão voltar */
+.back-btn {
+position: fixed;
+top: 20px;
+left: 20px;
+background: #38bdf8;
+color: #0f172a;
+padding: 10px 16px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: 600;
+transition: all 0.3s ease;
+box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+}
+
+/* Hover */
+.back-btn:hover {
+background: #0ea5e9;
+transform: translateY(-2px);
+box-shadow: 0 8px 20px rgba(56, 189, 248, 0.5);
+}
